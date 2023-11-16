@@ -80,8 +80,8 @@ function expensesReducer(state, action) {
                 (expense) => expense.id === action.payload.id
             );
             const updateableExpense = state[updateableExpenseIndex];
-            const updateItem = { ...updateableExpense, ...action.payload.data };
-            const updateExpenses = [...state];
+            const updatedItem = { ...updateableExpense, ...action.payload.data };
+            const updatedExpenses = [...state];
             updatedExpenses[updateableExpenseIndex] = updatedItem;
             return updatedExpenses;
         case 'DELETE':
